@@ -13,6 +13,19 @@ The primary goal of this project is to build and configure a continuous testing 
 
 ---
 
+## 📚 Theoretical Knowledge
+
+### 1. What is the main difference between a Unit Test and a UI Test (Selenium) in terms of what they actually validate?
+* **Answer**: Unit tests validate the smallest isolated parts of the application (such as individual functions or classes) in memory for logical correctness, whereas UI tests validate the end-to-end integration and user interface behavior by simulating actual user interactions in a real browser.
+
+### 2. Why is it important to automate both of these testing types in a CI/CD pipeline before code goes to production?
+* **Answer**: Automating both testing types in a CI/CD pipeline guarantees that both the low-level code logic and the final user-facing features remain bug-free, preventing regression issues from reaching production.
+
+### 3. Why do we need to run Selenium in "Headless" mode when executing UI tests inside a cloud container like a GitHub Actions runner?
+* **Answer**: Headless mode is necessary because cloud containers and CI/CD runners (like GitHub Actions) are headless Linux/Ubuntu systems that do not run a graphical user interface (GUI) or display server, requiring the browser to execute in-memory.
+
+---
+
 ## 📁 Repository Structure
 
 ```text
@@ -110,8 +123,3 @@ The pipeline is configured in `.github/workflows/ci-cd.yml`. It runs automatical
 - **Step D (Simulated Deployment)**: 
   If and only if both test steps pass successfully, the pipeline executes the deployment simulation step, logging:
   `"All tests passed! Application successfully deployed to production."`
-
----
-
-## 🔒 Copyright
-*Copyright © i2i Systems Turkey 2026. All rights reserved. In commercial confidence.*
